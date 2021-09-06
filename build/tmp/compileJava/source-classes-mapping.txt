@@ -1,0 +1,60 @@
+com/mindhub/homebanking/repositories/AccountRepository.java
+ com.mindhub.homebanking.repositories.AccountRepository
+com/mindhub/homebanking/repositories/CardRepository.java
+ com.mindhub.homebanking.repositories.CardRepository
+com/mindhub/homebanking/repositories/LoanRepository.java
+ com.mindhub.homebanking.repositories.LoanRepository
+com/mindhub/homebanking/controllers/AccountController.java
+ com.mindhub.homebanking.controllers.AccountController
+com/mindhub/homebanking/models/TransactionType.java
+ com.mindhub.homebanking.models.TransactionType
+com/mindhub/homebanking/models/ClientLoan.java
+ com.mindhub.homebanking.models.ClientLoan
+com/mindhub/homebanking/repositories/TransactionRepository.java
+ com.mindhub.homebanking.repositories.TransactionRepository
+com/mindhub/homebanking/controllers/CardController.java
+ com.mindhub.homebanking.controllers.CardController
+com/mindhub/homebanking/configurations/WebAuthentication.java
+ com.mindhub.homebanking.configurations.WebAuthentication
+com/mindhub/homebanking/dtos/TransactionDTO.java
+ com.mindhub.homebanking.dtos.TransactionDTO
+com/mindhub/homebanking/dtos/CardDTO.java
+ com.mindhub.homebanking.dtos.CardDTO
+com/mindhub/homebanking/controllers/LoanController.java
+ com.mindhub.homebanking.controllers.LoanController
+com/mindhub/homebanking/dtos/ClientLoanDTO.java
+ com.mindhub.homebanking.dtos.ClientLoanDTO
+com/mindhub/homebanking/models/Card.java
+ com.mindhub.homebanking.models.Card
+com/mindhub/homebanking/models/Account.java
+ com.mindhub.homebanking.models.Account
+com/mindhub/homebanking/configurations/WebAuthorization.java
+ com.mindhub.homebanking.configurations.WebAuthorization
+com/mindhub/homebanking/repositories/ClientLoanRepository.java
+ com.mindhub.homebanking.repositories.ClientLoanRepository
+com/mindhub/homebanking/dtos/LoanDTO.java
+ com.mindhub.homebanking.dtos.LoanDTO
+com/mindhub/homebanking/dtos/AccountDTO.java
+ com.mindhub.homebanking.dtos.AccountDTO
+com/mindhub/homebanking/controllers/TransactionController.java
+ com.mindhub.homebanking.controllers.TransactionController
+com/mindhub/homebanking/models/CardColor.java
+ com.mindhub.homebanking.models.CardColor
+com/mindhub/homebanking/models/Client.java
+ com.mindhub.homebanking.models.Client
+com/mindhub/homebanking/models/Transaction.java
+ com.mindhub.homebanking.models.Transaction
+com/mindhub/homebanking/models/CardType.java
+ com.mindhub.homebanking.models.CardType
+com/mindhub/homebanking/controllers/ClientController.java
+ com.mindhub.homebanking.controllers.ClientController
+com/mindhub/homebanking/repositories/ClientRepository.java
+ com.mindhub.homebanking.repositories.ClientRepository
+com/mindhub/homebanking/dtos/ClientDTO.java
+ com.mindhub.homebanking.dtos.ClientDTO
+com/mindhub/homebanking/HomebankingApplication.java
+ com.mindhub.homebanking.HomebankingApplication
+com/mindhub/homebanking/dtos/LoanApplicationDTO.java
+ com.mindhub.homebanking.dtos.LoanApplicationDTO
+com/mindhub/homebanking/models/Loan.java
+ com.mindhub.homebanking.models.Loan

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/manager.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="formulario">
+            <h1>Agregar clientes</h1>
+
+            <form @submit.prevent="agregarCliente()">
+                <fieldset>
+                    <label>First Name
+                        <input type="text" v-model="firstName" > 
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label>Last Name
+                        <input type="text" v-model="lastName" >
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <label>Email
+                        <input type="text" v-model="email" >
+                    </label>
+                </fieldset>
+                <div class="button">
+                    <button type="submit" id="agregar">Agregar Cliente</button>
+                </div>
+            </form>
+        </div>
+        <div class="table">
+            <table>
+                <thead class="thead">
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="cliente in clientes" v-bind:key="cliente">
+                        <td>{{cliente.firstName}}</td>
+                        <td>{{cliente.lastName}}</td>
+                        <td>{{cliente.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@next "></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../scripts/manager.js"></script>
+</body>
+
+</html>

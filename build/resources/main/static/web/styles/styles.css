@@ -1,0 +1,839 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+* {
+    margin: 0;
+    font-family: 'Roboto';
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* background-color: #02578f; */
+    background-color: rgb(24, 56, 93);
+    width: 100%;
+    height: 20%;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.h1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 90%;
+    height: 50%;
+}
+
+.logo {
+    display: flex;
+    background-image: url("../img/bank-removebg-preview.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.logo h1 {
+    position: relative;
+    left: 35vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 70%;
+    margin-bottom: 6rem;
+}
+
+.usuario {
+    text-decoration: underline;
+}
+
+.cliente {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+}
+
+.cardsCuentas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 60%;
+}
+
+.datos {
+    display: flex;
+    margin: .5em;
+    color: rgb(56, 55, 55);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(56, 55, 55);
+    width: 100%;
+}
+
+.negrita {
+    font-weight: 700;
+    color: rgb(56, 55, 55);
+}
+
+.cliente .pCuentas {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.cliente .email {
+    justify-content: center;
+    text-align: center;
+}
+
+.cuenta {
+    display: flex;
+    height: 100%;
+    border: 3px solid black;
+    list-style-type: none;
+    font-size: 2.5vh;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.cuenta li {
+    color: white;
+}
+
+.datosCuenta {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    width: 25%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.datosLlenos {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* background-color: #02578f; */
+    background-color: rgb(24, 56, 93);
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.hamburger {
+    position: absolute;
+    background-color: transparent;
+    right: 2rem;
+    top: .5rem;
+    height: 30px;
+    width: 30px;
+    padding: 20px 20px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index: 1002;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.hamburger.is-active {
+    background-color: none;
+}
+
+._layer {
+    background: #fff;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    width: 28px;
+    height: 4px;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger:hover .-top {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.hamburger:hover .-bottom {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.hamburger.is-active .-top {
+    -webkit-transform: translateY(200%) rotate(45deg) !important;
+    -ms-transform: translateY(200%) rotate(45deg) !important;
+    transform: translateY(200%) rotate(45deg) !important;
+}
+
+.hamburger.is-active .-mid {
+    opacity: 0;
+}
+
+.hamburger.is-active .-bottom {
+    -webkit-transform: translateY(-200%) rotate(135deg) !important;
+    -ms-transform: translateY(-200%) rotate(135deg) !important;
+    transform: translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active {
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.menuppal {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid black;
+    overflow: hidden;
+    height: 50%;
+    right: 3.5rem;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 30%;
+    z-index: 1001;
+}
+
+.menuppal ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menuppal ul li {
+    list-style: none;
+    text-align: center;
+    font-family: Verdadna, Arial, Helvetica;
+    font-size: 1.5rem;
+    line-height: 3em;
+    height: 3em;
+    color: #369;
+    text-transform: none;
+    font-weight: bold;
+}
+
+.menuppal ul li a {
+    text-decoration: none;
+    color: #369;
+}
+
+.menuppal ul li a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* TERMINA ACCOUNTS.HTML  */
+
+
+/* EMPIEZA ACCOUNT.HTML */
+
+.tablaTransacciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    border: 2px solid black;
+}
+
+.thTransacciones tr th {
+    /* background-color: #02578f; */
+    background-color: rgb(24, 56, 93);
+    color: black;
+    font-size: 3vh;
+    font-weight: bolder;
+    padding: .5rem 3rem;
+}
+
+.tbTransacciones tr td {
+    background-color: gray;
+    font-weight: bold;
+    font-size: 2.5vh;
+    padding: .5rem;
+}
+
+.botonTabla {
+    /* background-color: #02578f; */
+    background-color: white;
+    border: 1px solid black;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-top: .5rem;
+    color: black;
+    padding: .2rem 2rem;
+}
+
+.botonTabla:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #2b5192;
+}
+
+.botonAccounts {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    margin-top: 1rem;
+    font-weight: bolder;
+    padding: .3rem;
+    background-color: white;
+}
+
+.botonAccounts:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #2b5192;
+}
+
+.divPrestamos {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.tituloPrestamos {
+    text-align: center;
+}
+
+.cuentaPrestamos {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    height: 100%;
+    border: 3px solid black;
+    font-size: 2.5vh;
+    width: 100%;
+}
+
+.datosLlenosPrestamos {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* background-color: #02578f; */
+    background-color: rgb(24, 56, 93);
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.datosLlenosPrestamos span {
+    padding: .6rem;
+}
+
+.datosCuentaPrestamos {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    width: 25%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.datosCuentaPrestamos span {
+    padding: .6rem;
+}
+
+
+/*     COMIENZA CARDS    */
+
+.tarjetas {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.card {
+    width: 20rem;
+    height: 12rem;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+    margin-bottom: 1rem;
+}
+
+.card__part {
+    box-shadow: 1px 1px #a4a3aa;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 20rem;
+    height: 12rem;
+    background-image: url('https://image.ibb.co/bVnMrc/g3095.png'), linear-gradient(to right bottom, #1D455C, #1D455C, #1d77b3, #1D455C, #1D455C);
+    /*linear-gradient(to right bottom, #fd8369, #fc7870, #f96e78, #f56581, #ee5d8a)*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__front {
+    padding: 18px;
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+}
+
+.card__logo {
+    height: 2.4rem;
+}
+
+.card__front-logo {
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+}
+
+.card__back {
+    padding: 1rem 0;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+    margin-top: .4rem;
+    height: 2.2rem;
+    background-color: #303030;
+}
+
+.card__square {
+    border-radius: .3rem;
+    height: 2rem;
+}
+
+.card_numer {
+    display: block;
+    width: 100%;
+    word-spacing: .3rem;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card__space-75 {
+    width: 75%;
+    float: left;
+}
+
+.card__space-25 {
+    width: 25%;
+    float: left;
+}
+
+.card__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.1rem;
+}
+
+.card__info {
+    margin-bottom: 0;
+    margin-top: .3rem;
+    font-size: .6rem;
+    line-height: 1.7rem;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.card__back-content {
+    padding: 1rem 1rem 0;
+}
+
+.card__secret--last {
+    color: black;
+    text-align: right;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.card__secret {
+    padding: .3rem .5rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.card__secret:before {
+    content: '';
+    position: absolute;
+    top: -.3rem;
+    left: -.3rem;
+    height: calc(100% + .3rem);
+    width: calc(100% - 2rem);
+    border-radius: 4px;
+    background: repeating-linear-gradient(45deg, #1D455C, #ededed .4rem, #f9f9f9 .4rem, #f9f9f9 .7rem);
+}
+
+.card__back-logo {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.card__back-square {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.card:hover .card__front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+}
+
+.card:hover .card__back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
+
+
+/* COMIENZA LOGIN  */
+
+.row {
+    margin-top: 1rem;
+    width: 60%;
+}
+
+.login-box {
+    width: 100%;
+    color: white;
+    min-height: 500px;
+    background: url(https://images.unsplash.com/photo-1507208773393-40d9fc670acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80) no-repeat center;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
+}
+
+.login-snip {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 36, 77, 0.9);
+    padding: 1rem 2rem;
+}
+
+.login-snip .login,
+.login-snip .sign-up-form {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear
+}
+
+.login-snip .sign-in,
+.login-snip .sign-up,
+.login-space .group .check {
+    display: none
+}
+
+.login-snip .tab,
+.login-space .group .label,
+.login-space .group .button {
+    text-transform: uppercase
+}
+
+.login-snip .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: 2px solid transparent
+}
+
+.login-snip .sign-in:checked+.tab,
+.login-snip .sign-up:checked+.tab {
+    color: #fff;
+    border-color: #17428d
+}
+
+.login-space {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d
+}
+
+.login-space .group {
+    margin-bottom: 15px
+}
+
+.login-space .group .label,
+.login-space .group .input,
+.login-space .group .button {
+    width: 100%;
+    color: #fff;
+    display: block
+}
+
+.login-space .group .input,
+.login-space .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1)
+}
+
+.login-space .group input[data-type="password"] {
+    text-security: circle;
+    -webkit-text-security: circle
+}
+
+.login-space .group .label {
+    color: white;
+    font-size: 12px
+}
+
+.login-space .group .button {
+    background: #17428d
+}
+
+.login-space .group label .icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1)
+}
+
+.login-space .group label .icon:before,
+.login-space .group label .icon:after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s
+}
+
+.login-space .group label .icon:before {
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0)
+}
+
+.login-space .group label .icon:after {
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0)
+}
+
+.login-space .group .check:checked+label {
+    color: #fff
+}
+
+.login-space .group .check:checked+label .icon {
+    background: #17428d
+}
+
+.login-space .group .check:checked+label .icon:before {
+    transform: scale(1) rotate(45deg)
+}
+
+.login-space .group .check:checked+label .icon:after {
+    transform: scale(1) rotate(-45deg)
+}
+
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+    transform: rotate(0)
+}
+
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+    transform: rotate(0)
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.hr {
+    height: 2px;
+    margin: 60px 0 50px 0;
+    background: rgba(255, 255, 255, .2)
+}
+
+.foot {
+    text-align: center
+}
+
+main .cardLogin {
+    width: 25rem;
+    display: flex;
+}
+
+::placeholder {
+    color: #8f8e8e
+}
+
+.btnConfirm {
+    background-color: #17428d;
+    border: 1px solid black;
+    color: white;
+    margin-right: .5rem;
+}
+
+.btnCancel {
+    color: white;
+    border: 1px solid black;
+}
+
+.btnCancel:hover {
+    color: white;
+}
+
+.formLoans {
+    border: 1px solid black;
+    padding: 0 3rem .5rem 3rem;
+    background: rgba(0, 36, 77, 0.9);
+    color: white
+}
+
+.btnLoans {
+    border: 1px solid black;
+    padding: .5rem;
+    margin: .5rem 8rem;
+    text-align: center;
+}
+
+.btnLoans:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #2b5192;
+}
+
+.formCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    margin-top: 2rem;
+    padding: 0 3rem .5rem 3rem;
+    background: rgba(0, 36, 77, 0.9);
+    color: white
+}
+
+.formCards fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btnCuenta {
+    border: 1px solid black;
+    padding: .5rem;
+    margin: .5rem 8rem;
+    text-align: center
+}
+
+.btnCuenta:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #2b5192;
+}
+
+.formTransfers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    margin-top: 2rem;
+    padding: 0 3rem .5rem 3rem;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 36, 77, 0.9);
+    color: white
+}
+
+.formTransfers input,
+select {
+    display: flex;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}

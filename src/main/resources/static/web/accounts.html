@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas - Home Banking</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">
+                <h1>HOME BANKING</h1>
+            </div>
+
+            <div class="h1">
+                <h2>Cuentas</h2>
+            </div>
+            <div class="hamburger">
+                <div class="_layer -top"></div>
+                <div class="_layer -mid"></div>
+                <div class="_layer -bottom"></div>
+            </div>
+            <nav class="menuppal">
+                <ul>
+                    <li><a href="#">Cuentas</a></li>
+                    <li><a href="./cards.html">Tarjetas</a></li>
+                    <li><a href="./transfers.html">Realizar Transferencias</a></li>
+                    <li>
+                        <a v-on:click="logout()">Cerrar Sesion</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="datos">
+
+                <h4 class="email">Email: {{cliente.email}}</h4>
+                <!-- <h4 class="pCuentas">Cuentas:</h4> -->
+                <h3>Usuario: <span class="usuario">{{cliente.firstName}} {{cliente.lastName}}</span></h3>
+            </div>
+            <div class="cliente">
+                <div class="cardsCuentas">
+
+                    <button v-if="cuentas.length < 3" v-on:click="create()" class="btnCuenta">Crear cuenta</button>
+
+                    <ul v-for="cuenta in ascendente()" class="cuenta">
+
+                        <div class="datosCuenta">
+                            <!--<span class="negrita">ID: </span>-->
+                            <span class="negrita">Numero de cuenta:</span>
+                            <span class="negrita">Balance:</span>
+                            <span class="negrita">Fecha de creacion:</span>
+                            <span class="negrita">Ver transacciones de la cuenta:</span>
+                        </div>
+                        <div class="datosLlenos">
+                            <!--<li> {{cuenta.id}}</li>-->
+                            <li>{{cuenta.number}}</li>
+                            <li> ${{cuenta.balance}}</li>
+                            <li>{{formatDate(cuenta.creationDate)}}</li>
+                            <a class="botonAccounts" v-bind:href="'http://localhost:8080/web/account.html?id='+cuenta.id">Click Aqui!</a>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="divPrestamos">
+                    <h2 class="tituloPrestamos">Prestamos Solicitados:</h2>
+                    <a class="btnLoans" href="/web/loan-application.html">Solicitar nuevo prestamo</a>
+                    <div v-if="prestamos.length !== 0">
+
+                        <ul v-for="prestamo in prestamos">
+                            <div class="cuentaPrestamos">
+                                <div class="datosCuentaPrestamos">
+                                    <span class="negrita">Prestamo:</span>
+                                    <span class="negrita">Monto:</span>
+                                    <span class="negrita">Pago:</span>
+                                </div>
+                                <div class="datosLlenosPrestamos">
+                                    <span>{{prestamo.name}}</span>
+                                    <span>${{prestamo.amount}}</span>
+                                    <span>{{prestamo.payments}} Cuotas</span>
+                                </div>
+                            </div>
+
+                        </ul>
+                    </div>
+                    <div v-else="prestamos.length == 0">
+                        <span class="negrita">No hay Prestamos Solicitados</span>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+    </main>
+    <footer></footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@next "></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js " integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4 " crossorigin="anonymous "></script>
+    <script src="./scripts/accounts.js "></script>
+</body>
+
+</html>

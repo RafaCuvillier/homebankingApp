@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Home Banking</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">
+                <h1>HOME BANKING</h1>
+            </div>
+
+            <div class="h1">
+                <h2>Bienvenido</h2>
+            </div>
+
+
+        </header>
+
+        <main>
+
+            <div class="row">
+                <div class="col-md-6 mx-auto p-0">
+                    <div class="cardLogin">
+                        <div class="login-box">
+                            <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Ingresar</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
+                                <div class="login-space">
+                                    <div class="login">
+                                        <div class="group"> <label for="name" class="label">Email</label> <input id="name" v-model="name" type="text" class="input" placeholder="Ingrese su email"> </div>
+                                        <div class="group"> <label for="pwd" class="label">contraseña</label> <input id="pwd" v-model="pwd" type="password" class="input" data-type="password" placeholder="Ingrese su contraseña"> </div>
+                                        <div class="group"> <input type="submit" class="button" value="Iniciar Sesion" v-on:click="login()"> </div>
+                                        <div class="hr"></div>
+                                    </div>
+                                    <div class="sign-up-form">
+                                        <div class="group"> <label for="user" class="label">Nombre</label> <input id="user" v-model="firstName" type="text" class="input" placeholder="Ingrese su nombre"> </div>
+                                        <div class="group"> <label for="user" class="label">Apellido</label> <input id="user" v-model="lastName" type="text" class="input" placeholder="Ingrese su apellido"> </div>
+                                        <div class="group"> <label for="pass" class="label">contraseña</label> <input id="pass" v-model="pwd" type="password" class="input" data-type="password" placeholder="Crear una contraseña"> </div>
+                                        <div class="group"> <label for="email" class="label">Email</label> <input id="email" v-model="name" type="text" class="input" placeholder="Ingrese su email"> </div>
+                                        <div class="group"> <input type="submit" class="button" value="Registrarse" v-on:click="register()"> </div>
+                                        <div class="hr"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer></footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@next "></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
